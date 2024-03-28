@@ -85,7 +85,7 @@ void loop() {
   // Hareket sensörü verisi okunur.
   
   if (sensorvalue == HIGH) {
-    http.begin(client, server, port, "/hareket.php");
+    http.begin(client, server, port, "/motion.php");
     int httpCode = http.GET();
     Serial.println(httpCode);
     http.end();
@@ -98,7 +98,7 @@ void loop() {
     }
     digitalWrite(kirmizi_led, LOW);
   }
-  /* Eğer hareket algılandıysa serverdaki hareket.php dosyasını çalıştıracak http isteği gönderilir
+  /* Eğer hareket algılandıysa serverdaki motion.php dosyasını çalıştıracak http isteği gönderilir
   ve kırmızı led 3 kere yanıp söner. */
 }
 
